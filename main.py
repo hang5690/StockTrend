@@ -14,7 +14,7 @@ r = yf.download(target, start='2022-01-02', end='2022-07-01')['Close']
 
 # Convert data frame into a line graph
 p = sb.lineplot(data = r.apply(lambda row: row / r.iloc[[0]].values[0] - 1, axis = 1), dashes = False, palette = 'tab10')
-p.set(xlabel = None, title = 'Trend of DOW Jones Industrial Components (DOW 30) \nbetween January and June in 2022')
+p.set(xlabel = None, title = 'Trends of DOW Jones Industrial Components (DOW 30) \nbetween January and June in 2022')
 mp.pyplot.xticks(rotation = 30)
 p.yaxis.set_major_formatter(mp.ticker.FuncFormatter(lambda y, _: '{:.1%}'.format(y)))
 
